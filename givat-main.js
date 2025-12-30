@@ -546,7 +546,7 @@ gsap.from(img, {
 });
 });
 
-const projectBoxImages = document.querySelectorAll('.animate-image-box-inner');
+const projectBoxImages = document.querySelectorAll('.animate-image-box img');
 
 projectBoxImages.forEach((element, index) => {
 const tl = gsap.timeline({ paused: true })
