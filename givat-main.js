@@ -28,7 +28,7 @@ gsap.ScrollTrigger.getAll().forEach(trigger => trigger.kill());
 document.body.offsetHeight;
 
 const elements = Array.from(document.querySelectorAll(
-"h1, h2, h3, h4, h5, h6, p, .btn, .nav, .footer a, .name, .role, .link-box"
+"h1, h2, h3, h4, h5, h6, p, .btn, .nav, .footer a, .name, .role, .link-box, .link, .header-left-menu"
 )).filter(el => !el.matches(".about-page section:nth-of-type(12) .center h1"));
 
 elements.forEach((element) => {
