@@ -126,3 +126,34 @@ div#givat-card-carousel {
 .givat-card-carousel .givat-card-item img {
     width: 65%;
 }
+.every-home-grding {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.every-home-grding .every-home-grding-col {
+    border-left: 0.25vw solid black;
+    text-align: center;
+}
+.givat-everyhome-box {
+    margin: 5vw 8vw;
+}
+.givat-everyhome-box h3 {
+    text-transform: uppercase;
+    color: black;
+    font-size: 3.5vw;
+    margin-bottom: 2.5vw;
+    line-height: 1;
+}
+.givat-everyhome-box h3 {
+    text-transform: uppercase;
+    color: black;
+    font-size: 3.5vw;
+    margin-bottom: 2.5vw;
+    line-height: 1;
+}
+.givat-everyhome-box p.gehb-text-reg {
+    color: black;
+    line-height: 1.2;
+    font-size: 1.1vw;
+    margin: 0;
+}
