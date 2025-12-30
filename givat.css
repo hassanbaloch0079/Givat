@@ -144,12 +144,11 @@ div#givat-card-carousel {
     margin-bottom: 2.5vw;
     line-height: 1;
 }
-.givat-everyhome-box h3 {
-    text-transform: uppercase;
+.givat-everyhome-box p.gehb-text-bold {
     color: black;
-    font-size: 3.5vw;
-    margin-bottom: 2.5vw;
     line-height: 1;
+    margin-bottom: 2.5vw;
+    font-size: 1.3vw;
 }
 .givat-everyhome-box p.gehb-text-reg {
     color: black;
