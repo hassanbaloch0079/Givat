@@ -129,6 +129,7 @@ div#givat-card-carousel {
 .every-home-grding {
     display: grid;
     grid-template-columns: 1fr 1fr;
+	margin-top: 4vw;
 }
 .every-home-grding .every-home-grding-col {
     border-left: 0.25vw solid black;
