@@ -1,7 +1,18 @@
+h1,h2,h3,h4 {
+	font-family: Cardinal-extrabold, Arial, sans-serif;
+}
+p, a, li {
+	font-family: Dia-bold, Arial, sans-serif;
+}
+.reg-text {
+	font-family: Dia-regular, Arial, sans-serif;
+}
+
 .givat-banner-video-btn .line {
     text-decoration: inherit;
 }
 body {
+	overflow: hidden;
   margin: 0 auto;
   scroll-behavior: auto;
   overflow-x: hidden;
@@ -10,4 +21,108 @@ body {
 }
 html {
     scroll-behavior: auto;
+}
+.givat-footer-form-field, #wf-form-Givat-Footer-Form .choices__inner {
+    padding: 0;
+    border: 0;
+    box-shadow: unset;
+    border-bottom: 0.15vw solid rgba(139, 104, 69, 1);
+    color: black;
+    font-size: 1vw;
+    margin-bottom: 1.7vw;
+    line-height: 1;
+    height: 2vw;
+    font-weight: 500;
+    background: transparent;
+    transition: 1s;
+}
+#wf-form-Givat-Footer-Form .choices__inner .choices__list {
+    padding: 0;
+    font-size: 1vw;
+    font-family: Dia-regular, Arial, sans-serif;
+}
+.givat-footer-form-field::placeholder, #wf-form-Givat-Footer-Form .choices__inner input::placeholder, #wf-form-Givat-Footer-Form .choices__inner .choices__placeholder {
+  color: rgba(139, 104, 69, 1);
+  opacity: 1; /* Some browsers require opacity for placeholder color to show */
+}
+#wf-form-Givat-Footer-Form .choices__inner {
+    min-height: auto;
+}
+#wf-form-Givat-Footer-Form .choices:after {
+    top: 1vw;
+}
+#wf-form-Givat-Footer-Form .choices {
+    margin: 0;
+}
+.givat-footer-form-field:focus {
+    border-color: black;
+    color: black;
+}
+textarea#message-area {
+    min-height: 5vw;
+    padding: 1vw 0;
+}
+input#footer-form-btn {
+    padding: 1vw 2vw;
+    line-height: 1;
+    height: auto;
+    border: 0;
+    font-size: 1.2vw;
+    margin-top: 4vw;
+    background: black;
+    color: white;
+    text-decoration: underline;
+}
+.footer-logos {
+    margin-top: 6vw;
+    margin-bottom: 6vw;
+    text-align: center;
+}
+.footer-logos-inner h4.footer-logo-text {
+    margin-bottom: 3vw;
+    text-transform: uppercase;
+    font-size: 0.9vw;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.animate-header-imgs-icon img {
+  clip-path: circle(0% at 50% 50%);
+  will-change: clip-path;
+}
+.givat-footer-menu {
+    margin-bottom: 7vw;
+}
+ul.givat-footer-menu-links {
+    display: inline-flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0;
+    border-top: 0.1vw solid black;
+    padding: 1.4vw 2vw;
+    border-bottom: 0.1vw solid black;
+}
+ul.givat-footer-menu-links a {
+    color: black;
+    text-transform: uppercase;
+    font-family: Dia-regular, Arial, sans-serif;
+    font-size: 1.1vw;
+}
+.givat-card-carousel .flickity-slider {
+    display: grid;
+    align-items: center;
+}
+.givat-card-carousel .givat-card-item {
+    flex-basis: 33.3333333333%;
+    max-width: 33.3333333333%;
+}
+div#givat-card-carousel {
+    width: 120%;
+    margin-left: -10%;
+}
+.givat-card-carousel .givat-card-item {
+		text-align: center;
+}
+.givat-card-carousel .givat-card-item img {
+    width: 65%;
 }
