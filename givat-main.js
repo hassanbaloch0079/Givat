@@ -186,7 +186,7 @@ setupSplitTextEventListeners();
 initScrollRestoration();
 initCustomSmoothScrolling();
 initSplitTextAnimations();
-//initImageParallax();
+initImageParallax();
 //initSvgAnimations();
 //initImageTrail();
 
