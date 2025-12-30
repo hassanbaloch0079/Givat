@@ -578,3 +578,135 @@ ease: "power4.out"
 }
 );
 });
+
+
+ document.addEventListener("DOMContentLoaded", function () {
+
+    const countries = [
+      "Afghanistan","Albania","Algeria","Andorra","Angola","Antigua and Barbuda","Argentina","Armenia","Australia","Austria",
+      "Azerbaijan","Bahamas","Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bhutan",
+      "Bolivia","Bosnia and Herzegovina","Botswana","Brazil","Brunei","Bulgaria","Burkina Faso","Burundi","Cabo Verde","Cambodia",
+      "Cameroon","Canada","Central African Republic","Chad","Chile","China","Colombia","Comoros","Congo (Congo-Brazzaville)","Costa Rica",
+      "Côte d'Ivoire","Croatia","Cuba","Cyprus","Czechia (Czech Republic)","Democratic Republic of the Congo","Denmark","Djibouti","Dominica","Dominican Republic",
+      "Ecuador","Egypt","El Salvador","Equatorial Guinea","Eritrea","Estonia","Eswatini (fmr. Swaziland)","Ethiopia","Fiji","Finland",
+      "France","Gabon","Gambia","Georgia","Germany","Ghana","Greece","Grenada","Guatemala","Guinea",
+      "Guinea-Bissau","Guyana","Haiti","Holy See","Honduras","Hungary","Iceland","India","Indonesia","Iran",
+      "Iraq","Ireland","Israel","Italy","Jamaica","Japan","Jordan","Kazakhstan","Kenya","Kiribati",
+      "Kuwait","Kyrgyzstan","Laos","Latvia","Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania",
+      "Luxembourg","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Marshall Islands","Mauritania","Mauritius",
+      "Mexico","Micronesia","Moldova","Monaco","Mongolia","Montenegro","Morocco","Mozambique","Myanmar (formerly Burma)","Namibia",
+      "Nauru","Nepal","Netherlands","New Zealand","Nicaragua","Niger","Nigeria","North Korea","North Macedonia","Norway",
+      "Oman","Pakistan","Palau","Palestine State","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland",
+      "Portugal","Qatar","Romania","Russia","Rwanda","Saint Kitts and Nevis","Saint Lucia","Saint Vincent and the Grenadines","Samoa","San Marino",
+      "Sao Tome and Principe","Saudi Arabia","Senegal","Serbia","Seychelles","Sierra Leone","Singapore","Slovakia","Slovenia","Solomon Islands",
+      "Somalia","South Africa","South Korea","South Sudan","Spain","Sri Lanka","Sudan","Suriname","Sweden","Switzerland",
+      "Syria","Tajikistan","Tanzania","Thailand","Timor-Leste","Togo","Tonga","Trinidad and Tobago","Tunisia","Turkey",
+      "Turkmenistan","Tuvalu","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States of America","Uruguay","Uzbekistan","Vanuatu",
+      "Venezuela","Vietnam","Yemen","Zambia","Zimbabwe",
+      "Åland Islands","Bermuda","Bouvet Island","British Indian Ocean Territory","Cayman Islands","Christmas Island","Cocos (Keeling) Islands","Cook Islands","Falkland Islands","Faroe Islands",
+      "French Guiana","French Polynesia","French Southern Territories","Greenland","Guadeloupe","Guam","Guernsey","Hong Kong","Isle of Man","Jersey",
+      "Macau","Martinique","Mayotte","Montserrat","New Caledonia","Niue","Norfolk Island","Northern Mariana Islands","Pitcairn Islands","Puerto Rico",
+      "Réunion","Saba","Saint Barthélemy","Saint Helena, Ascension and Tristan da Cunha","Saint Martin (French part)","Saint Pierre and Miquelon","Sark","Sint Eustatius","Sint Maarten (Dutch part)","South Georgia and the South Sandwich Islands",
+      "Svalbard and Jan Mayen","Tokelau","Turks and Caicos Islands","United States Minor Outlying Islands","Virgin Islands (British)","Virgin Islands (U.S.)"
+    ];
+
+    const select = document.getElementById("givat-form-select-countries");
+    if (!select) return;
+
+    countries.forEach(country => {
+      const option = document.createElement("option");
+      option.value = country;
+      option.textContent = country;
+      select.appendChild(option);
+    });
+
+    new Choices(select, {
+      searchEnabled: true,
+      shouldSort: false,
+      placeholder: true,
+      placeholderValue: "Country",
+    });
+  });
+  
+  gsap.registerPlugin(ScrollTrigger);
+  document.querySelectorAll(".animate-inner-imgs-icon img").forEach((img, i) => {
+    gsap.fromTo(img,
+                {
+      clipPath: 'circle(0% at 50% 50%)',
+    },
+                {
+      clipPath: 'circle(70.7% at 50% 50%)',
+      ease: "power1.out",
+      stagger: 0.2,
+      duration: 2,
+      scrollTrigger: {
+        trigger: img,
+        start: "top 100%",
+        end: "bottom 100%",
+        scrub: 5
+      }
+    }
+               );
+  });
+  gsap.fromTo(".animate-header-imgs-icon img",
+              {
+    clipPath: 'circle(0% at 50% 50%)',
+  },
+              {
+    clipPath: 'circle(70.7% at 50% 50%)',
+    ease: "power1.out",
+    stagger: 0.2,
+    duration: 2,
+  }
+             );
+             
+// Footer scroling effect
+// ============================================================
+// IMAGE PARALLAX
+// ============================================================
+
+  function initImageParallax() {
+    /*if (window.innerWidth > 650) {
+      const footer = document.querySelector(".footer");
+      if (!footer) return;
+
+      const footerHeight = footer.offsetHeight;
+
+      gsap.fromTo(footer,
+                  { yPercent: -30 },
+                  {
+        yPercent: 0,
+        ease: "none",
+        scrollTrigger: {
+          trigger: footer,
+          start: "top 102%",
+          end: `+=${footerHeight}`,
+          scrub: true,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => {
+            if (self.progress === 1 || self.progress === 0) {
+              gsap.set(footer, { clearProps: "transform" });
+            }
+          }
+        }
+      }
+                 );
+    }*/
+  }
+  
+  
+ 	// Card Carousel
+  document.addEventListener("DOMContentLoaded", function() {
+    const flkty = new Flickity('.givat-card-carousel-wrapper', {
+      cellAlign: 'left',
+      contain: true,
+      autoPlay:5000,
+      pauseAutoPlayOnHover: false,
+      contain: true,
+      dragThreshold: 5,
+      draggable: true,      // allow drag/swipe
+      wrapAround: true,     // infinite loop
+      pageDots: false,      // remove bullets
+      prevNextButtons: false, // remove arrows
+    });
+  });
