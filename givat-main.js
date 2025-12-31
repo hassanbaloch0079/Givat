@@ -697,16 +697,18 @@ ease: "power4.out"
   
  	// Card Carousel
   document.addEventListener("DOMContentLoaded", function() {
-    const flkty = new Flickity('.givat-card-carousel-wrapper', {
-      cellAlign: 'left',
-      contain: true,
-      autoPlay:5000,
-      pauseAutoPlayOnHover: false,
-      contain: true,
-      dragThreshold: 5,
-      draggable: true,      // allow drag/swipe
-      wrapAround: true,     // infinite loop
-      pageDots: false,      // remove bullets
-      prevNextButtons: false, // remove arrows
-    });
+	document.querySelectorAll(".givat-card-carousel-wrapper").forEach(function (carousel) {
+		new Flickity(carousel, {
+		  cellAlign: 'left',
+		  contain: true,
+		  autoPlay:5000,
+		  pauseAutoPlayOnHover: false,
+		  contain: true,
+		  dragThreshold: 5,
+		  draggable: true,      // allow drag/swipe
+		  wrapAround: true,     // infinite loop
+		  pageDots: false,      // remove bullets
+		  prevNextButtons: false, // remove arrows
+		});
+	});
   });
