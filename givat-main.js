@@ -571,6 +571,138 @@ async function handleInternalLinkClicks(event) {
     }
 }
 
+// ============================================================
+// PAGE TRANSITION
+// ============================================================
+
+async function pageTransition(url, isPopState = false) {
+    if (window.transitioning) return;
+    window.transitioning = true;
+
+    // Kill all existing ScrollTrigger instances
+    if (gsap.ScrollTrigger) {
+        gsap.ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    }
+
+    const overlayFirst = document.querySelector(".page-overlay-first");
+    const overlaySecond = document.querySelector(".page-overlay-second");
+    const cursor = document.querySelector(".cursor");
+
+    gsap.set([overlayFirst, overlaySecond], {
+        display: "block",
+        visibility: "visible",
+    });
+
+    gsap.set(overlayFirst, {
+        clipPath: "polygon(50% 0%, 50% 0%, 50% 100%, 50% 100%)",
+        width: "18svh",
+        height: "15svh",
+        top: "50%",
+        left: "50%",
+        xPercent: -50,
+        yPercent: -50,
+        opacity: 1,
+        position: "fixed",
+        zIndex: 9999
+    });
+
+    const transitionIn = gsap.timeline();
+    transitionIn
+        .to(overlayFirst, {
+            clipPath: "polygon(62% 0, 86% 0, 42% 100%, 18% 100%)",
+            duration: 0.6,
+            ease: "power3.inOut"
+        })
+        .to(overlayFirst, {
+            width: "100vw",
+            height: "100svh",
+            clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
+            xPercent: 0,
+            yPercent: 0,
+            top: 0,
+            left: 0,
+            duration: 0.9,
+            ease: "expo.inOut"
+        })
+  /*
+  .to (".mega-menu-container", {
+            opacity: 0.5,
+            duration: 0.9,
+      ease: "power3.out"
+    
+       })
+       */
+        .to(overlaySecond, {
+            opacity: 0.5,
+            duration: 1,
+            ease: "power3.out",
+        }, 0)
+        .to(".logo img", { 
+            yPercent: -100, 
+            duration: 1, 
+            ease: "power4.inOut",
+        }, -0.1)
+        .to(cursor, {
+            scale: 0,
+            duration: 0.5,
+            ease: "power2.out"
+        }, -0.1);
+
+    await new Promise(resolve => setTimeout(resolve, 1420));
+
+    if (!isPopState) {
+        window.location.href = url;
+    } else {
+        // Reset everything before reloading
+        resetAndReinitialize();
+        window.location.reload();
+    }
+}
+
+
+// ============================================================
+// RESET AND REINITIALIZE
+// ============================================================
+
+function resetAndReinitialize() {
+    // Kill all ScrollTrigger instances
+    if (gsap.ScrollTrigger) {
+        gsap.ScrollTrigger.getAll().forEach(trigger => trigger.kill());
+    }
+
+    // Clear all timeouts
+    if (window.scrollTimeout) {
+        clearTimeout(window.scrollTimeout);
+    }
+
+    // Reset transitioning state
+    window.transitioning = false;
+
+    // Hide all text elements
+    const elements = document.querySelectorAll(
+        "h1, h2, h3, h4, h5, h6, p, .btn, .nav, .footer a, .name, .role, .link-box"
+    );
+    gsap.set(elements, { visibility: "hidden" });
+
+    // Force a full page reflow
+    document.body.offsetHeight;
+}
+
+
+// ============================================================
+// HANDLE POPSTATE
+// ============================================================
+
+function handlePopState() {
+    if (!window.transitioning) {
+        resetAndReinitialize();
+        // pageTransition with isPopState=true will reload the page
+        // setupWindowLoadHandler will handle split text initialization after reload
+        pageTransition(window.location.href, true);
+    }
+}
+
+
 // custom animations
 document.addEventListener("DOMContentLoaded", function() {
 gsap.registerPlugin(ScrollTrigger);
