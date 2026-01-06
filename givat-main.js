@@ -183,7 +183,7 @@ function initializeApplication() {
 initScrollDelay();
 //initGsapAnimations();
 setupSplitTextEventListeners();
-initScrollRestoration();
+//initScrollRestoration();
 initCustomSmoothScrolling();
 initSplitTextAnimations();
 initImageParallax();
