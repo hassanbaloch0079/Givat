@@ -184,7 +184,7 @@ initScrollDelay();
 //initGsapAnimations();
 setupSplitTextEventListeners();
 //initScrollRestoration();
-initCustomSmoothScrolling();
+//initCustomSmoothScrolling();
 initSplitTextAnimations();
 initImageParallax();
 //initSvgAnimations();
