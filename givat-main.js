@@ -179,17 +179,17 @@ window.removeEventListener('touchmove', preventScroll);
 // ============================================================
 
 function initializeApplication() {
-// Disable scroll for 2 seconds to allow galleries and videos to load
-initScrollDelay();
-//initGsapAnimations();
-setupSplitTextEventListeners();
-//initScrollRestoration();
-//initCustomSmoothScrolling();
-initSplitTextAnimations();
-initImageParallax();
-//initSvgAnimations();
-//initImageTrail();
-
+	// Disable scroll for 2 seconds to allow galleries and videos to load
+	initScrollDelay();
+	//initGsapAnimations();
+	setupSplitTextEventListeners();
+	setupLinkClicksEventHandlers();
+	initScrollRestoration();
+	initCustomSmoothScrolling();
+	initSplitTextAnimations();
+	initImageParallax();
+	//initSvgAnimations();
+	//initImageTrail();
 }
 
 // Wait for DOM and dependencies to be ready
@@ -524,6 +524,51 @@ if (window.customSmoothScroll && window.customSmoothScroll.destroy) {
 window.customSmoothScroll.destroy();
 }
 window.customSmoothScroll = new CustomSmoothScroll();
+}
+
+// ============================================================
+// LINK CLICKS EVENT HANDLERS SETUP
+// ============================================================
+
+function setupLinkClicksEventHandlers() {
+  // Add click event listener for internal links
+  document.body.addEventListener('click', handleInternalLinkClicks);
+  
+  // Add popstate event listener for browser back/forward
+  window.addEventListener('popstate', handlePopState);
+}
+
+
+// ============================================================
+// HANDLE INTERNAL LINK CLICKS
+// ============================================================
+
+async function handleInternalLinkClicks(event) {
+    const target = event.target.closest("a[href]");
+    if (
+        target &&
+        target.id !== "toggle-button" &&
+        !target.target &&
+        !target.href.includes("#") &&
+        !target.href.includes("mailto:") &&
+        !target.href.includes("tel:")
+    ) {
+        event.preventDefault();
+
+        const currentUrl = window.location.href;
+        const targetUrl = target.href;
+        const isThankYouPage = currentUrl.includes("/thank-you");
+
+        if (currentUrl === targetUrl && !isThankYouPage) {
+            pageTransition(targetUrl);
+            return;
+        }
+
+        if (!isThankYouPage) {
+            window.history.pushState({}, '', targetUrl);
+            pageTransition(targetUrl);
+        }
+    }
 }
 
 // custom animations
