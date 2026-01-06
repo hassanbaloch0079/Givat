@@ -364,6 +364,23 @@ bindEvents() {
 			slider.addEventListener("touchcancel", () => this.endSliderDrag());
 		});
 	}
+
+	// #ID Links
+	document.querySelectorAll('a[href^="#"]').forEach(link => {
+		link.addEventListener("click", (e) => {
+			const id = link.getAttribute("href");
+			const target = document.querySelector(id);
+			if (!target) return;
+			
+			e.preventDefault();
+			
+			const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+			
+			this.velocity = targetPosition - this.currentScroll;
+			this.targetScroll = targetPosition;
+			this.currentTime = 0;
+		});
+	});
 }
 
 onScroll(delta) {
