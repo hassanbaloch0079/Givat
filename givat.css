@@ -85,10 +85,10 @@ input#footer-form-btn {
     font-weight: 100;
     letter-spacing: 2px;
 }
-.animate-header-imgs-icon img {
+/* .animate-header-imgs-icon img {
   clip-path: circle(0% at 50% 50%);
   will-change: clip-path;
-}
+}*/
 .givat-footer-menu {
     margin-bottom: 7vw;
 }
