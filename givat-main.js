@@ -644,7 +644,7 @@ ease: "power4.out"
     });
   });
   
-  gsap.registerPlugin(ScrollTrigger);
+  /*gsap.registerPlugin(ScrollTrigger);
   document.querySelectorAll(".animate-inner-imgs-icon img").forEach((img, i) => {
     gsap.fromTo(img,
                 {
@@ -663,7 +663,7 @@ ease: "power4.out"
       }
     }
                );
-  });
+  }); */
   /*gsap.fromTo(".animate-header-imgs-icon img",
               {
     clipPath: 'circle(0% at 50% 50%)',
