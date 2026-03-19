@@ -664,7 +664,7 @@ ease: "power4.out"
     }
                );
   });
-  gsap.fromTo(".animate-header-imgs-icon img",
+  /*gsap.fromTo(".animate-header-imgs-icon img",
               {
     clipPath: 'circle(0% at 50% 50%)',
   },
@@ -674,7 +674,7 @@ ease: "power4.out"
     stagger: 0.2,
     duration: 2,
   }
-             );
+             );*/
              
 // Footer scroling effect
 // ============================================================
