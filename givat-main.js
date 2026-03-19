@@ -645,7 +645,7 @@ ease: "power4.out"
   });
   
   gsap.registerPlugin(ScrollTrigger);
-  document.querySelectorAll(".animate-inner-imgs-icon-1 img").forEach((img, i) => {
+  document.querySelectorAll(".animate-inner-imgs-icon img").forEach((img, i) => {
     gsap.fromTo(img,
                 {
       clipPath: 'circle(0% at 50% 50%)',
