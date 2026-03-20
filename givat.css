@@ -158,3 +158,47 @@ div#givat-card-carousel {
     margin: 0;
 }
 /* fsdfds */
+
+
+@media only screen and (max-width:768px){
+  .div-block-2.givat-main-header-nav {
+    min-height: 40px;
+}
+  .menu-button {
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+}
+  .div-block-2.givat-main-header-nav img.image {
+    width: 14px;
+}
+  .div-block-2.givat-main-header-nav .text-block-2 {
+    font-size: 16px;
+}
+  .givat-topbar-menu .header-left-menu .div-block-3 {
+    display: none;
+}
+  .div-block-2.givat-main-header-nav .image-2 {
+    width: 28px;
+}
+  .div-block-2.givat-main-header-nav .div-block.header-righ-button {
+    display: none;
+}
+  #givat-card-carousel {
+    width: 100%;
+    margin-left: 0;
+}
+  .givat-card-carousel .givat-card-item {
+    width: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+  .thoughtfull-carousel-inner .givat_everything_thoughtfull_slider-imgbox {
+    width: 100%;
+}
+  .thoughtfull-carousel-inner .givat_everything_thoughtfull_slider-imgbox {
+    width: 100%;
+}
+  .givat-main-sub-heading {
+    font-size: 16px;
+}
+}
