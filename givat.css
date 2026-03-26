@@ -3,6 +3,7 @@ h1,h2,h3,h4 {
 }
 p, a, li {
 	font-family: Dia-bold, Arial, sans-serif;
+	line-height: 1.465vw;
 }
 .reg-text {
 	font-family: Dia-regular, Arial, sans-serif;
