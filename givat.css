@@ -8,7 +8,9 @@ p, a, li {
 .reg-text {
 	font-family: Dia-regular, Arial, sans-serif;
 }
-
+img {
+    width: 100%;
+}
 .givat-banner-video-btn .line {
     text-decoration: inherit;
 }
