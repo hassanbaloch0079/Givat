@@ -717,7 +717,7 @@ ease: "power4.out"
 		new Flickity(carousel, {
 		  cellAlign: 'left',
 		  contain: true,
-		  autoPlay:5000,
+		  autoPlay:3000,
 		  pauseAutoPlayOnHover: false,
 		  contain: true,
 		  dragThreshold: 5,
