@@ -6,6 +6,7 @@ console.error('GSAP plugins not loaded. Make sure GSAP, ScrollTrigger, and Split
 }
 // ============================================================
 // INITIAL SCROLL SETUP
+//
 // ============================================================
 
 function initScrollRestoration() {
