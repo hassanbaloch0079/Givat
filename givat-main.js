@@ -584,7 +584,7 @@ ScrollTrigger.create({
 });
 
 
-gsap.fromTo(".givat-herobanner-video",
+/* gsap.fromTo(".givat-herobanner-video",
 					{
 clipPath: "inset(0 50% 0 50%)"
 },
@@ -593,7 +593,7 @@ clipPath: "inset(0 0% 0 0%)",
 duration: 1.75,
 ease: "power4.out"
 }
-);
+); */
 });
 
 
