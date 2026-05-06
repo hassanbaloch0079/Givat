@@ -544,7 +544,7 @@ window.customSmoothScroll = new CustomSmoothScroll();
 }
 
 // custom animations
-document.addEventListener("DOMContentLoaded", function() {
+/* document.addEventListener("DOMContentLoaded", function() {
 gsap.registerPlugin(ScrollTrigger);
 const projectBoxes = document.querySelectorAll('.animate-image-box');
 
@@ -584,7 +584,7 @@ ScrollTrigger.create({
 });
 
 
-/* gsap.fromTo(".givat-herobanner-video",
+gsap.fromTo(".givat-herobanner-video",
 					{
 clipPath: "inset(0 50% 0 50%)"
 },
@@ -593,8 +593,8 @@ clipPath: "inset(0 0% 0 0%)",
 duration: 1.75,
 ease: "power4.out"
 }
-); */
-});
+);
+}); */
 
 
  document.addEventListener("DOMContentLoaded", function () {
